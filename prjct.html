@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="prjct.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="B_navBar">
+        <div>
+          <img src="imgerf/image.png" alt="" class="B_Logo" />
+        </div>
+        <ul class="B_FirstUL">
+          <li>Care at CaringHands</li>
+          <li>Health Library</li>
+          <li>For Medical Professionals</li>
+          <li>Resesarch & Education at CaringHands</li>
+          <li>Giving to CaringHands</li>
+        </ul>
+        <div class="B_middSection"> </div>
+        <ul class="B_SecondUL">
+          <div style="flex: 1;">
+
+          </div>
+          <div class="B_lastside">
+            <li>Request Appointment</li>
+            <li style="display: flex; align-items: center; gap: 15px">
+              <p style="width: 50px">Log in</p>
+              <img src="imgerf/patient.png" alt="" style="width: 40px" />
+            </li>
+            <li>
+              <img src="imgerf/menu.png" alt="" style="width: 30px" />
+            </li>
+          </ul>
+          </div>
+        <div class="B_lastSection"></div>
+      </nav>
+      <div class="B_content">
+        <div class="B_search-bar">
+          <input
+            type="text"
+            placeholder=" Make a Search..."
+            class="B_search-bar_input"
+            aria-label="search"
+          />
+          <button class="B_search-bar__submit">
+            <i class="fas fa-search" aria-label="submit search"></i>
+          </button>
+        </div>
+        <h1 class="B_pleasework" style="color: #041954">
+          We are always with you
+        </h1>
+      </div>
+    </header>
+    <table class="F_table">
+      <tr>
+      <td>
+    <!-- Main Container -->
+    <div class="F_container">
+        
+      <!-- Alphabet Filter Section -->
+      <div class="F_alphabet-section">
+          <h2>Find diseases & conditions by first letter</h2>
+          <div class="F_alphabet-links">
+              <a href="diseases.html?letter=A">A</a>
+              <a href="diseases.html?letter=B">B</a>
+              <a href="diseases.html?letter=C">C</a>
+              <a href="diseases.html?letter=D">D</a>
+              <a href="diseases.html?letter=E">E</a>
+              <a href="diseases.html?letter=F">F</a>
+              <a href="diseases.html?letter=G">G</a>
+              <a href="diseases.html?letter=H">H</a>
+              <a href="diseases.html?letter=I">I</a>
+              <a href="diseases.html?letter=J">J</a>
+              <a href="diseases.html?letter=K#">K</a>
+              <a href="diseases.html?letter=L">L</a>
+              <a href="diseases.html?letter=M">M</a>
+              <a href="diseases.html?letter=N">N</a>
+              <a href="diseases.html?letter=O">O</a>
+              <a href="diseases.html?letter=P">P</a>
+              <a href="diseases.html?letter=Q">Q</a>
+              <a href="diseases.html?letter=R">R</a>
+              <a href="diseases.html?letter=S">S</a>
+              <a href="diseases.html?letter=T">T</a>
+              <a href="diseases.html?letter=U">U</a>
+              <a href="diseases.html?letter=V">V</a>
+              <a href="diseases.html?letter=W">W</a>
+              <a href="diseases.html?letter=X">X</a>
+              <a href="diseases.html?letter=Y">Y</a>
+              <a href="diseases.html?letter=Z">Z</a>
+              <a href="diseases.html?letter=other">#</a>
+          </div>
+      </div>
+      </td>
+      <td>
+      <!-- Search Section -->
+      <div class="F_search-section">
+          <label for="F_search">Search diseases & conditions</label></br>
+          <div class="F_search-container">
+               <!-- Search icon on the left -->
+
+                <input type="text" id="F_search" placeholder="search..." />
+              <span class="F_clear-button" id="F_clear-button" style="display: none;">&times;</span> <!-- Clear button, hidden initially -->
+              <button id="F_search-button" style="display: none;">Search</button> <!-- Search button, hidden initially -->
+          </div>
+      </div>  
+    
+
+    </div>
+  </td>
+  </tr>
+  </table>
+  <script>
+      // JavaScript to handle search button click
+      document.getElementById("F_search-button").addEventListener("click", function() {
+      const query = document.getElementById("F_search").value.trim();
+      if (query) {
+          // Redirect to search-results.html with the search query in the URL
+          window.location.href = `diseases.html?query=${encodeURIComponent(query)}`;
+      } else {
+          alert("Please enter a search term.");
+      }
+      });
+
+
+      const searchInput = document.getElementById("F_search");
+      const searchButton = document.getElementById("F_search-button");
+
+      // Function to toggle the visibility of the search button based on input value
+      searchInput.addEventListener("input", function() {
+      if (searchInput.value.trim() !== "") {
+      searchButton.style.display = "inline-block"; // Show the button
+      } else {
+      searchButton.style.display = "none"; // Hide the button if input is empty
+      }
+      });
+
+      // Handle the search button click
+      searchButton.addEventListener("click", function() {
+      const query = searchInput.value.trim();
+      if (query) {
+      // Redirect to search-results.html with the search query in the URL
+      window.location.href = `diseases.html?query=${encodeURIComponent(query)}`;
+      }
+      });
+  </script>
+     <div class="Y_higherdiv">
+      <div class="Y_upperPart">
+        <div class="Y_div1">
+          <h1>healing Starts here</h1>
+          <h5>The right answers the first time</h5>
+          <p>
+            Effective treatment depends on getting the right diagnosis.Our
+            experts diagnose and treat the toughest medical challenges
+          </p>
+          <h5>Top Clinic in the universe</h5>
+          <p>
+            CaringHands Clinic has more No.1 rankings than any other hospital in
+            the nation according to me
+            <a  class="sfwef" href="">Learn more about our top-ranked specialties</a>
+          </p>
+          <a href="">
+            <button class="Y_button">why choose CaringHands Clinic</button>
+          </a>
+        </div>
+        <div class="Y_div2">
+          <img src="imgerf/img1.jpg" alt="" class="Y_upperimages" />
+        </div>
+        <div class="Y_div1">
+          <h1>World-class care for global patients</h1>
+          <p>
+            We make it easy for patients around the world to get care from
+            CaringHands Clinic
+          </p>
+          <h5>Top Clinic in the universe</h5>
+          <p>
+            CaringHands Clinic has more No.1 rankings than any other hospital in
+            the nation according to me
+            <a href="hhh">Learn more about our top-ranked specialties</a>
+          </p>
+          <a href="">
+            <button class="Y_button">why choose CaringHands Clinic</button>
+          </a>
+        </div>
+        <div class="Y_div2">
+          <img src="imgerf/img2.png" alt="" class="Y_upperimages" />
+        </div>
+      </div>
+      <div class="Y_middlePart">
+        <div class="Y_childDiv2" id="Y_childDiv1">
+          <h1>locations</h1>
+          <p>
+            Learn more about CaringHands Clinic locations or choose a specific
+            location
+          </p>
+          <a href="">
+            <button class="Y_button">Explore all location</button>
+          </a>
+        </div>
+        <div class="Y_childDiv2">
+          <img src="imgerf/location1.jpg" alt="" class="Y_locationImages" />
+          <div class="Y_linkInsideImage">
+            <a href=""><strong>CaringHands Clinic in U.S</strong></a>
+            <p>phoenix & Scottsdale</p>
+          </div>
+        </div>
+        <div class="Y_childDiv2">
+          <img src="imgerf/location2.jpg" alt="" class="Y_locationImages" />
+          <div class="Y_linkInsideImage">
+            <a href=""> <strong>CaringHands Clinic Moroco ></strong></a>
+            <p>sidi bibi</p>
+          </div>
+        </div>
+        <div class="Y_childDiv2">
+          <img src="imgerf/location3.jpg" alt="" class="Y_locationImages" />
+          <div class="Y_linkInsideImage">
+            <a href=""> <strong>CaringHands Clinic in Anassi ></strong></a>
+            <p>casa lkhanza</p>
+          </div>
+        </div>
+        <div class="Y_childDiv2">
+          <img src="imgerf/location4.jpg" alt="" class="Y_locationImages" />
+          <div class="Y_linkInsideImage">
+            <a href=""><strong>CaringHands Clinic in Europe ></strong></a>
+            <p>spain</p>
+          </div>
+        </div>
+        <div class="Y_childDiv2">
+          <img src="imgerf/location5.jpg" alt="" class="Y_locationImages" />
+          <div class="Y_linkInsideImage">
+            <a href=""> <strong>CaringHands Clinic in Tanja ></strong></a>
+            <p>Tanja l3ayla</p>
+          </div>
+        </div>
+      </div>
+      <div class="Y_lowerpart">
+        <div class="Y_title">
+          <h1>Featured care areas</h1>
+          <p>
+            We solve the world's most serious and complex medical challenges
+          </p>
+        </div>
+        <div class="Y_hyperlinks1">
+          <a href="">Bone marrow transplant</a><a href="">Brain aneurysm</a
+          ><a href="">Brain tumor</a><a href="">Breast cancer</a
+          ><a href="">Colon cancer</a><a href="">Congenital heart disease</a
+          ><a href="">Glioma</a>
+        </div>
+        <div class="Y_hyperlinks2">
+          <a href="">Heart arrhythmia</a><a href="">Heart valve disease</a
+          ><a href="">Brain tumor</a><a href="">Breast cancer</a
+          ><a href="">Colon cancer</a><a href="">Congenital heart disease</a
+          ><a href="">Glioma</a>
+        </div>
+      </div>
+    </div>
+  <div class="T_toggle">
+    <button class="T_btn-open-popup" onclick="togglePopup()">Feedback</button>
+  </div>
+
+  <div id="popupOverlay" class="T_overlay-container">
+    <div class="T_popup-box">
+      <button
+        class="T_btn-close-popup2"
+        onclick="togglePopup()"
+        style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+        "
+      >
+        &times;
+      </button>
+      
+      <form class="T_form-container">
+        <p><h3 style="color: rgb(0, 8, 0)">We'd love your feedback!</h3></p>
+        <p>(checking star is from Do Not Agree At All to Completely Agree)</p>
+        <p>I was able to complete the main purpose of my visit today.</p>
+        <div class="T_rate">
+          <input type="radio" id="star5" name="rate" value="5" />
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="rate" value="4" />
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="rate" value="3" />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="rate" value="2" />
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="rate" value="1" />
+          <label for="star1" title="text">1 star</label>
+        </div>
+
+        <p>It was easy to perform my task today.</p>
+        <div class="T_rate2">
+          <input type="radio" id="star51" name="rate1" value="51" />
+          <label for="star51" title="text">5 stars</label>
+          <input type="radio" id="star41" name="rate1" value="41" />
+          <label for="star41" title="text">4 stars</label>
+          <input type="radio" id="star31" name="rate1" value="31" />
+          <label for="star31" title="text">3 stars</label>
+          <input type="radio" id="star21" name="rate1" value="21" />
+          <label for="star21" title="text">2 stars</label>
+          <input type="radio" id="star11" name="rate1" value="11" />
+          <label for="star11" title="text">1 star</label>
+        </div>
+        <div>
+          <label for="nationality"
+            >What was the main purpose of your visit today?</label
+          >
+          <select name="nationality" id="T_nationality">
+            <option value="1">Explore a health topic</option>
+            <option value="2">
+              Understand is our clinic is a good option for medical care
+            </option>
+            <option value="3">Make an apointment with our clinic</option>
+            <option value="4">Access patient online service</option>
+            <option value="5">Other</option>
+          </select>
+        </div>
+        <p>Overall, how satisfied are you with this website?</p>
+        <div class="T_rate3">
+          <input type="radio" id="star52" name="rate2" value="52" />
+          <label for="star52" title="text">5 stars</label>
+          <input type="radio" id="star42" name="rate2" value="42" />
+          <label for="star41" title="text">4 stars</label>
+          <input type="radio" id="star32" name="rate2" value="32" />
+          <label for="star32" title="text">3 stars</label>
+          <input type="radio" id="star22" name="rate2" value="22" />
+          <label for="star22" title="text">2 stars</label>
+          <input type="radio" id="star12" name="rate2" value="12" />
+          <label for="star12" title="text">1 star</label>
+        </div>
+
+        <p>How likely are you to recommend this website?</p>
+        <div class="T_rate4">
+          <input type="radio" id="star53" name="rate3" value="53" />
+          <label for="star53" title="text">5 stars</label>
+          <input type="radio" id="star43" name="rate3" value="43" />
+          <label for="star43" title="text">4 stars</label>
+          <input type="radio" id="star33" name="rate3" value="33" />
+          <label for="star33" title="text">3 stars</label>
+          <input type="radio" id="star23" name="rate3" value="23" />
+          <label for="star23" title="text">2 stars</label>
+          <input type="radio" id="star13" name="rate3" value="13" />
+          <label for="star13" title="text">1 star</label>
+        </div>
+        <p>Please tell us the reasons for your scores.</p>
+        <div>
+          <textarea
+            class="T_lktaba"
+            placeholder="please do not include any personnaly identifiable information in your response"
+            name="Biography"
+            style="height: 100px; width: 230px"
+          ></textarea>
+        </div>
+        <p>
+          Your responses will be used in accordance with our
+          <a href="">privacy policy.</a>
+        </p>
+        <label class="T_form-label" for="name"> Username: </label>
+        <input
+          class="T_form-input"
+          type="text"
+          placeholder="Enter Your Username"
+          id="name"
+          name="name"
+          required
+        />
+
+        <label class="T_form-label" for="email">Email:</label>
+        <input
+          class="T_form-input"
+          type="email"
+          placeholder="Enter Your Email"
+          id="email"
+          name="email"
+          required
+        />
+
+        <button class="T_btn-submit" type="submit">Submit</button>
+      </form>
+
+      <button class="T_btn-close-popup" onclick="togglePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const overlay = document.getElementById("popupOverlay");
+      overlay.classList.toggle("show");
+    }
+  </script>
+      <footer>
+        <div class="A_upperSection">
+          <div style="display: flex; gap: 40px; align-items: normal">
+            <img src="imgerf/heart (2).png" alt="" class="A_donationImage" />
+            <h2 class="A_title" style="width: 600%;">
+              Your gift saves more precious lives, donate today with big heart!
+            </h2>
+          </div>
+          <p class="A_motivationalTitle">
+            Every contribution makes a difference. Join us in our mission to heal
+            and support our community—your donation can change lives, and be a
+            hero in someone's story.
+          </p>
+          <a href="gsdvch.html"
+            ><button class="A_donationButton">Donate</button></a
+          >
+        </div>
+  
+        <div class="A_middleSection">
+          <div class="A_threeButtons">
+            <a href="gsdvch.html" style="text-decoration: none">
+              <button class="A_Mybutton1">
+                <div class="A-insideButton">
+                  <img src="imgerf/stethoscope.png" alt="" style="width: 50px" />
+                  <p style="display: inline-block; color: white">Find a doctor</p>
+                </div>
+                <div></div>
+                <div style="color: white">></div>
+              </button>
+            </a>
+            <a href="gsdvch.html" style="text-decoration: none">
+              <button class="A_Mybutton2">
+                <div class="A-insideButton">
+                  <img src="imgerf/briefcase.png" alt="" style="width: 40px" />
+                  <p style="display: inline-block; color: white">
+                    Explore careers
+                  </p>
+                </div>
+                <div></div>
+                <div style="color: white">></div>
+              </button>
+            </a>
+            <a href="gsdvch.html" style="text-decoration: none"
+              ><button class="A_Mybutton3">
+                <div class="A-insideButton">
+                  <img src="imgerf/newspaper.png" alt="" style="width: 37px" />
+                  <p style="display: inline-block; color: white">
+                    Sign up for free e-newsletters
+                  </p>
+                </div>
+                <div></div>
+                <div style="color: white">></div>
+              </button></a
+            >
+            <img src="imgerf/image.png" alt="" class="A_logoHosp" />
+          </div>
+          <div class="A_block">
+            <a href=""><h2>About CaringHands Clinic &gt</h2></a>
+            <a href=""><p>About this Site</p> </a>
+            <a href=""><p>Contact Us</p> </a>
+            <a href=""><p>Locations</p></a>
+            <a href=""><p>Health Information Policy</p></a>
+          </div>
+          <div class="A_block" id="A_block2">
+            <a href=""><h2>Medical Professionals &gt</h2></a>
+            <a href=""><p>AskCaringHandsExpert</p> </a>
+            <a href=""><p>Clinical trials</p> </a>
+            <a href=""><p>Refer a Patient</p></a>
+            <a href=""><h2>Businesses &gt</h2></a>
+            <a href=""><p>Executive Health Program</p> </a>
+            <a href=""><p>international Business Collaborations</p> </a>
+            <a href=""><p>Facilities & real Estate</p></a>
+            <a href=""><h2>Researchers &gt</h2></a>
+            <a href=""><p>Research Faculty</p> </a>
+            <a href=""><p>laboratory</p> </a>
+          </div>
+          <div class="A_block" id="A_block3">
+            <a href=""><h2>international Patients &gt</h2></a>
+            <a href=""><p>Appointments</p> </a>
+            <a href=""><p>Financial Services</p> </a>
+            <a href=""><p>international Locations & Offices</p></a>
+            <a href=""><h2>Charitable Care & Financial Assistance &gt</h2></a>
+            <a href=""><p>Community Health Needs Assessment</p> </a>
+            <a href=""><p>Financial Assistance Document - sidi bibi</p> </a>
+            <a href=""><p>Financial Assistance Document - sidi ifni</p></a>
+            <a href=""><p>Financial Assistance Document - Anassi</p></a>
+          </div>
+        </div>
+        <div style="background-color: #40a6fd; height: fit-content; margin: -8px">
+          <div class="A_line"></div>
+          <div class="A_lowerpart">
+            <div style="display: flex; flex-direction: column">
+              <p style="color: white">
+                <strong>Follow Caring Hands Clinic</strong>
+              </p>
+              <div class="A_SocialMediaSection">
+                <a href="">
+                  <button class="A_SocialMediaButtons">
+                    <img
+                      src="imgerf/instagram (1).png"
+                      alt=""
+                      class="A_SocialMediaImages"
+                    />
+                  </button>
+                </a>
+                <a href=""
+                  ><button class="A_SocialMediaButtons">
+                    <img
+                      src="imgerf/linkedin.png"
+                      alt=""
+                      class="A_SocialMediaImages"
+                    /></button
+                ></a>
+                <a href="">
+                  <button class="A_SocialMediaButtons">
+                    <img
+                      src="imgerf/youtube.png"
+                      alt=""
+                      class="A_SocialMediaImages"
+                      style="padding-top: 5px"
+                    />
+                  </button>
+                </a>
+                <a href=""
+                  ><button class="A_SocialMediaButtons">
+                    <img
+                      src="imgerf/facebook (1).png"
+                      alt=""
+                      class="A_SocialMediaImages"
+                      style="padding-left: 7px; width: 23px"
+                    /></button
+                ></a>
+                <a href="">
+                  <button class="A_SocialMediaButtons">
+                    <img
+                      src="imgerf/twitter (1).png"
+                      alt=""
+                      class="A_SocialMediaImages"
+                    />
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <p style="color: white">
+                <strong>Get the Caring Hands Clinic app</strong>
+              </p>
+              <div class="A_applicationsAcons">
+                <a href=""
+                  ><img src="imgerf/app-store.png" alt="" style="width: 40px" />
+                </a>
+                <a href=""
+                  ><img
+                    src="imgerf/app.png"
+                    alt=""
+                    style="width: 40px; margin-left: 50px"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="A_VeryLowPart">
+          <a href="">Terms & Conditions</a>
+          <a href="">Privacy Policy</a><a href=""> Notice of Privacy Practices</a
+          ><a href="">Accessibility Statement</a
+          ><a href="">Advertising & Sponsorship Policy</a> <a href="">Site Map</a>
+        </div>
+        <div>
+          <p
+            style="
+              color: rgb(143, 135, 135);
+              font-size: 13px;
+              max-width: 300px;
+              line-height: 1.5;
+            "
+          >
+            © 2024-5090 GsW9 Foundation for Medical Education and Research. All
+            right reserved
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>
