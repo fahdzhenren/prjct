@@ -653,7 +653,7 @@ F_.search-section {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-  }
+  }   
 }
 
 .A_upperSection {
@@ -693,7 +693,7 @@ F_.search-section {
 }
 
 .A_donationButton {
-  background-color: #21bffe;
+  background-color: #012d61;
   height: 50px;
   width: 200px;
   border-radius: 30px;
@@ -704,7 +704,7 @@ F_.search-section {
   color: white;
 }
 .A_donationButton:hover {
-  background-color: #55cfff;
+  background-color: #012d61;
   transition: 0.4s;
 }
 @media (max-width: 1500px) {
@@ -747,7 +747,7 @@ F_.search-section {
 }
 .A_middleSection {
   height: 100%;
-  background-color: #40a6fd;
+  background-color: #012d61;
   margin: -8px;
   padding-left: 110px;
   padding-right: 110px;
@@ -769,7 +769,7 @@ F_.search-section {
 .A_Mybutton3 {
   margin-top: 20px;
   height: 60px;
-  background-color: #40a6fd;
+  background-color: #012d61;
   border: 1px solid rgb(144, 221, 241);
   border-radius: 8px;
   display: flex;
@@ -797,7 +797,7 @@ F_.search-section {
   gap: 10px;
 }
 .A_block {
-  background-color: #40a6fd;
+  background-color: #012d61;
   height: fit-content;
   padding: 10px;
   min-width: 150px;
@@ -815,9 +815,8 @@ F_.search-section {
 .A_block a:hover {
   text-decoration: underline;
 }
-.A_SocialMediaSection:hover a {
-  text-decoration: none;
-  transition: 0.4s;
+.A_SocialMediaSection a:hover{
+  border: 2px solid white;
 }
 .A_line {
   border: 1px solid rgba(232, 225, 225, 0.492);
@@ -826,14 +825,38 @@ F_.search-section {
   margin-right: 110px;
   transition: 0.8s;
 }
-.A_SocialMediaButtons {
-  background-color: #40a6fd;
-  height: 40px;
-  width: 40px;
-  border-radius: 25px;
-  border: 1px solid white;
-  margin-right: 8px;
-  cursor: pointer;
+
+
+.A_SocialMediaSection{
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.A_SocialMediaSection a {
+  color: white;
+  background-color: #012d61; 
+  display: flex;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  color: #0057b8;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  max-height: 48px;
+ 
 }
 .A_SocialMediaButtons:hover {
   border: 3px solid white;
@@ -860,25 +883,30 @@ F_.search-section {
   padding-left: 250px;
   padding-right: 250px;
   height: 150px;
-  background-color: rgb(242, 253, 254);
+  background-color: #DFEEFDFF;
   margin: -8px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+ 
 }
 .A_VeryLowPart a {
+  text-decoration: none;
   color: black;
   font-size: 14px;
 }
 .A_VeryLowPart a:hover {
+  text-decoration:underline;
   color: rgb(79, 79, 255);
   transition: 0.4s;
 }
+
+
+
 .A_logoHosp {
   width: 300px;
   opacity: 0.3;
   margin-left: -5px;
 }
+
 
 @media (max-width: 1500px) {
   .A_Mybutton1,
@@ -908,9 +936,14 @@ F_.search-section {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+
   .A_lowerpart {
     padding: 20px;
   }
+
+
+  
   .A_VeryLowPart {
     display: flex;
     justify-content: space-between;
